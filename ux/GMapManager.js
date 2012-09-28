@@ -165,13 +165,15 @@ Ext.define ('Ext.ux.GMapManager', {
 	 * @return {google.maps.Map} Created map
 	 */
 	createMap: function (id, cfg) {
-		var map = new google.maps.Map (Ext.get(id).dom, cfg);
+		if (!this.mapList.containsKey (id)) {
+			var map = new google.maps.Map (Ext.get(id).dom, cfg);
 		
-		map.markerList = Ext.create ('Ext.util.HashMap');
+			map.markerList = Ext.create ('Ext.util.HashMap');
+			
+			this.mapList.add (id, map);
 		
-		this.mapList.add (id, map);
-		
-		return map;
+			return map;
+		}
 	} ,
 	
 	/**
@@ -246,6 +248,7 @@ Ext.define ('Ext.ux.GMapManager', {
 	 * @param {String} [markerId] Id of the marker
 	 */
 	addMarker: function (mapId, marker, markerId) {
+		// TODO: check if markerId and mapId exist and if they are already registered
 		markerId = markerId || Ext.id ();
 		
 		var map = this.mapList.get (mapId);
