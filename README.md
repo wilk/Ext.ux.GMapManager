@@ -49,8 +49,8 @@ Ext.ux.GMapManager.removeMapMarker ('reggioEmiliaMarker');
 ## Run the demo
 First of all, open `index.html` and change the following things:
 
-    - **change the ExtJS script folder**
-    - **insert your Google Maps API Key** (for more info: [**Obtain an API Key**](https://developers.google.com/maps/documentation/javascript/tutorial#api_key))
+   - **change the ExtJS script folder**
+   - **insert your Google Maps API Key** (for more info: [**Obtain an API Key**](https://developers.google.com/maps/documentation/javascript/tutorial#api_key))
 
 Then, open your browser at **http://localhost/Ext.ux.GMapManager/** and play the demo =)
 
